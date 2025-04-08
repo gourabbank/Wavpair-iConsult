@@ -1,0 +1,5 @@
+Flask
+librosa
+numpy
+psycopg2-binary
+soundfile
