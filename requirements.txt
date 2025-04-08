@@ -1,6 +1,6 @@
 Flask
 flask-cors
-gunicorn
+gunicorn==19.7.1
 librosa
 numpy
 soundfile
