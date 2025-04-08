@@ -1,5 +1,7 @@
 Flask
+flask-cors
+gunicorn
 librosa
 numpy
-psycopg2-binary
 soundfile
+psycopg2-binary
