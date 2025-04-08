@@ -6,6 +6,10 @@ app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+@app.route('/')
+def home():
+    return "Server is running!"
+
 @app.route('/upload', methods=['POST'])
 def upload():
     raw_audio = request.data
@@ -16,6 +20,8 @@ def upload():
     with open(file_path, 'wb') as f:
         f.write(raw_audio)
 
-    # Process audio (extract features, save to DB, etc.)
-    # return your result
     return jsonify({"message": "File received", "filename": safe_name})
+
+# ✅ THIS PART IS CRUCIAL
+if __name__ == '__main__':
+    app.run(debug=True)
